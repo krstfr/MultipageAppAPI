@@ -28,7 +28,7 @@ def login():
             #Login Success
                 return f"Login Successful Welcome {app.config.get('REGISTERED_USERS', {}).get(email).get('name')}" 
         error_string = "Incorrect Email/Password Combo"
-        return render_template("login.html.j2", form =form error = error_string)
+        return render_template("login.html.j2", form =form ,error = error_string)
     return render_template('login.html.j2',form=form ) 
 
 @app.route('/pokemon', methods=['GET', 'POST'])
